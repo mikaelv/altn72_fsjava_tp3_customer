@@ -36,9 +36,7 @@ import jakarta.persistence.Table;
           "ORDER BY c.id"
 )
 public class Customer implements Serializable {
-    private static final Logger logger = 
-            Logger.getLogger(Customer.class.getName());
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected int id;
@@ -63,7 +61,6 @@ public class Customer implements Serializable {
     }
 
     public void setId(int id) {
-        logger.log(Level.INFO, "setId called and set to {0}", id);
         this.id = id;
     }
 
@@ -72,7 +69,6 @@ public class Customer implements Serializable {
     }
 
     public void setFirstname(String firstname) {
-        logger.log(Level.INFO, "setFirstname called and set to {0}", firstname);
         this.firstname = firstname;
     }
 
@@ -81,7 +77,6 @@ public class Customer implements Serializable {
     }
 
     public void setLastname(String lastName) {
-        logger.log(Level.INFO, "setLastname called and set to {0}", lastName);
         this.lastname = lastName;
     }
 
@@ -90,7 +85,6 @@ public class Customer implements Serializable {
     }
 
     public void setAddress(Address address) {
-        logger.log(Level.INFO, "setAddress called");
         this.address = address;
     }
 
@@ -99,7 +93,6 @@ public class Customer implements Serializable {
     }
 
     public void setEmail(String email) {
-        logger.log(Level.INFO, "setEmail called and set to {0}", email);
         this.email = email;
     }
 
@@ -108,7 +101,6 @@ public class Customer implements Serializable {
     }
 
     public void setPhone(String phone) {
-        logger.log(Level.INFO, "setPhone called and set to {0}", phone);
         this.phone = phone;
     }
 }
