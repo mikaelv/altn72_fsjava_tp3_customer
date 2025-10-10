@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.Response;
 import org.efrei.altn72.customer.data.Customer;
 
 
-@Path("/customer")
+@Path("/customers")
 public class CustomerResource {
 
     public static final Logger logger =
@@ -25,7 +25,7 @@ public class CustomerResource {
     private EntityManager em;
 
     @GET
-    @Path("all")
+    @Path("")
     @Produces({MediaType.APPLICATION_JSON})
     public List<Customer> getAllCustomers() {
         return (List<Customer>) em.createNamedQuery("findAllCustomers").getResultList();

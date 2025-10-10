@@ -47,7 +47,7 @@ public class Customer implements Serializable {
     
     @OneToOne
     protected Address address;
-    
+
     protected String email;
  
     protected String phone;
