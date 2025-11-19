@@ -22,6 +22,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 
 /**
@@ -40,16 +43,24 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected int id;
-    
+
+    @Size(max=50)
     protected String firstname;
     
+    @Size(max=50)
     protected String lastname;
     
     @OneToOne
     protected Address address;
 
+    @Email
     protected String email;
- 
+
+    @Size(max=30)
+    @Pattern(
+            regexp = "^\\+[0-9][0-9 \\-]*$",
+            message = "must start with + and contain only digits, spaces, dash"
+    )
     protected String phone;
     
     public Customer() { 
